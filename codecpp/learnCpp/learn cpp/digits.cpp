@@ -31,8 +31,8 @@ int main(){
     string str = "nitin";
     int a = 123;
     cout<<"ret "<<ret(&a)<<endl;    // output 124
-    int x = 1;
-    cout<<"mod "<<x%10<<"   1/10 "<<1/10<<endl;    //output   mod 1   1/10 0
+    //int x = 1;
+    cout<<"mod of 1 is "<<1%10<<"   1/10 is "<<1/10<<endl;    //output   mod of 1 is 1   1/10 is 0
     cout<<oneDigit(&a)<<endl;
     
     return 0;
