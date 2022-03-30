@@ -38,6 +38,9 @@ int main() {
      
      cout<<"min "<<findMin(arr, 0, 9)<<endl;
      cout<<"max "<<findMax(arr, 0, 9)<<endl;
+     cout<<endl;
+     cout<<"minn "<<findMinn(arr, 0, 9)<<endl;
+     cout<<"mixx "<<findMaxx(arr, 0, 9)<<endl;
 
     return 0;
 }
