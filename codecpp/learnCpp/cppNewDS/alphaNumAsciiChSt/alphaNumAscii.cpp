@@ -69,7 +69,7 @@ int main() {
     cout<<endl;
     printAllAscii('1', '9');
     cout<<endl;
-    printALLAscii(1, 255);
+    printALLAscii(0, 255);
     /*numConv('9');
     cout<<endl;
     numAscii('0');*/
