@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 int alphaNumSm(char a){
     int x = a-'a'+1;
     cout<<"alphabet numbers of "<<a<<" is "<<x;
@@ -32,12 +33,33 @@ int numAscii(char a){
     return x;   // return (int)a;
 }
 
+void printAllAscii(char a, char b){
+    int i;
+    int range1 = (int)a;
+    int range2 = (int)b;
+    for(i=range1;i<=range2;i++){
+        cout<<"ascii number of "<<(char)i<<" is "<<(int)i<<endl;
+    }
+}
+
+
+void printALLAscii(int a, int b){
+    for(int i=a;i<=b;i++){
+        cout<<"ascii number of "<<(char)i<<" is "<<(int)i<<endl;
+    }
+}
+
 
 int main() {
     
     cout<<"small char in ASCII of a is "<<(int)'a'<<endl;
     cout<<"capital char in ASCII of A is "<<(int)'A'<<endl;
     cout<<"num in ASCII of 0 is "<<(int)'0'<<endl;
+    cout<<"char of "<<(char)255<<(int)255<<endl;
+    
+    // for(int i=(int)'a';i<=(int)'z';i++){
+    //     cout<<"ascii number of "<<(char)i<<" is "<<(int)i<<endl;
+    // }
    
     alphaNumSm('b');
     cout<<endl;
@@ -45,6 +67,9 @@ int main() {
     cout<<endl;
     convertToAscii('z');
     cout<<endl;
+    printAllAscii('1', '9');
+    cout<<endl;
+    printALLAscii(1, 255);
     /*numConv('9');
     cout<<endl;
     numAscii('0');*/
