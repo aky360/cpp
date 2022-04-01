@@ -16,7 +16,7 @@ int alphaNumCap(char a){
 
 int convertToAscii(char a){
     int x = (int)a;
-    cout<<"convert to ascii number "<<x;
+    cout<<"convert to ascii number of "<<a<<" is "<<x;
     return x;   // return (int)a;
 }
 
