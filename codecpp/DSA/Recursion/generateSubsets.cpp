@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 class Solution{
 public:
 	void solve(vector<int> nums, vector<int> output, int index, vector<vector<int>>& ans){
