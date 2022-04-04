@@ -6,8 +6,8 @@ public:
 	void solve(vector<string>& ans, string str, string output, int i) {
         //base case
         if(i>=str.length()) {
-            if(output.length()>0)
-                ans.push_back(output);
+			if(output.length()>0)
+				ans.push_back(output);
             return ;
         }
     
