@@ -3,55 +3,47 @@ using namespace std;
 
 class Solution{
 public:
-	void solve(vector<int> nums, vector<int> output, int index, vector<vector<int>>& ans){
-		//base case
-		if(index >= nums.size()){
-			ans.push_back(output);
-			return ;
-		}
-		//exclude the item
-		solve(nums, output, index+1, ans);
+	void solve(vector<string>& ans, string str, string output, int i) {
+        //base case
+        if(i>=str.length()) {
+            if(output.length()>0)
+                ans.push_back(output);
+            return ;
+        }
+    
+        //exclude
+        solve(ans, str, output, i+1);
+        //include
+        output.push_back(str[i]);
+        solve(ans, str, output, i+1);
+    }
 
-		//include the item
-		int element = nums[index];
-		output.push_back(element);
-		solve(nums, output, index+1, ans);
-	}
+    vector<string> subsequences(string str){
 
-	vector<vector<int>> subsets(vector<int>& nums){
-		vector<vector<int>> ans;
-		vector<int> output;
-		int index = 0;
-		solve(nums, output, index, ans);
-		return ans;
-	}
+	    vector<string> ans;
+        string output = "";
+        solve(ans,str,output,0);
+        return ans;
+	
+    }
 };
 
-void printNestedVector1(vector<vector<int>> vec){
-	for (vector<vector<int>>::iterator it = vec.begin(); it != vec.end(); ++it){
-        for (vector<int>::iterator it1 = (*it).begin(); it1 != (*it).end(); ++it1){
-            cout << *it1 << " ";
-        }
-        cout << endl;
+void printVec(vector<string> str){
+    for(vector<string>::iterator itr = str.begin();itr!=str.end();itr++){
+        cout<<*itr<<endl;
     }
 }
 
-void printNestedVector2(vector<vector<int>> vec){
-	for (const auto& v : vec){
-    	for (auto i : v){
-        	cout << i << " ";
-    	}
-    	cout << endl;
-	}
-}
-
 int main(){
-	vector<int> nums = {1,2,3};
+    
+	string str = "abcd";
 	Solution sol;
-	cout<<"generate subsets for the nums values "<<endl;
-	vector<vector<int>> vec = sol.subsets(nums);
-	printNestedVector1(vec);
+	
+	cout<<"generate all subsequence for the string values "<<endl;
+	vector<string> vec = sol.subsequences(str);
+
 	cout << endl;
-	printNestedVector2(vec);
+	printVec(vec);
+
 	return 0; 
 }
