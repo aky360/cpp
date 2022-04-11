@@ -34,6 +34,7 @@ void Graph::DFS(int vertex) {
 
   list<int>::iterator i;
   for (i = adjLists[vertex].begin(); i != adjLists[vertex].end(); ++i)
+    cout<<"current vertex "<<*i<<endl;
     if (!visited[*i])
       DFS(*i);
 }
