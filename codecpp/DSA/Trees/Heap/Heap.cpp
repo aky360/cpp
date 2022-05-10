@@ -3,7 +3,7 @@ class Heap{
     int arr[100];
     int size;
     Heap(){
-        int arr[0] = -1;
+        //int arr[0] = -1;
         int size = 0;
     }
     
@@ -46,12 +46,12 @@ class Heap{
 int main()
 {
     Heap h;
-    int a[] = {-1, 54, 53, 55, 52, 50};
+    int a[6] = {-1, 54, 53, 55, 52, 50};
     int n = 5;
-    for(int i=n/2;i<n;i--){
+    for(int i=n/2;i>0;i--){
         h.heapify(a, n, i);
     }
-    for(int j = 0;j<n;j++){
+    for(int j = 0;j<=n;j++){
         cout<<a[j]<<" ";
     }
    
