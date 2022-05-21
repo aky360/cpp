@@ -52,3 +52,41 @@ int main() {
 	}
 	return 0;
 }
+
+
+
+
+
+
+/*
+#include<bits/stdc++.h>
+using namespace std;
+
+bool has_any_digits(const string& s)
+{
+    return any_of(s.begin(), s.end(), ::isdigit);
+}
+
+int main()
+{
+    string query= "H311o, W0r1d!";
+    
+    for(string::size_type i=0;i<query.size();i++){
+        cout<<query[i];
+    }
+    cout<<endl;
+    
+    for (int i = 0; i < query.length(); i++)
+    {
+        cout<<query[i];
+    }
+    
+    cout<<endl;
+    cout << query << ": has digits: "
+              << boolalpha
+              << has_any_digits(query)
+              << endl;
+    return 1;
+}
+
+*/
