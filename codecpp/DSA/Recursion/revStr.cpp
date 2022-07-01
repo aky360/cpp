@@ -17,7 +17,7 @@ int main() {
 
     string name = "abcde";
     cout << endl;
-    reverse(name, 0 , name.length()-1 );
+    reverseStr(name, 0 , name.length()-1 );
     cout << endl;
     cout << name << endl;
 
