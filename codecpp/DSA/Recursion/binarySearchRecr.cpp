@@ -37,3 +37,7 @@ int main() {
 
     return 0;
 }
+
+
+//Time Complexity: O(log n)
+//Auxiliary Space: O(log n)
