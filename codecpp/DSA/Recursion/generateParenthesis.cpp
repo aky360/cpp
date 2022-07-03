@@ -5,7 +5,7 @@ vector<string> valid;
 
 void generate(string &s, int open, int close){
 
-	//base case
+	//base case.
 	if(open == 0 && close == 0){
 		valid.push_back(s);
 		for(vector<string>::iterator itr = valid.begin();itr != valid.end(); ++itr){
