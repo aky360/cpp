@@ -19,7 +19,7 @@ int fibMemoization(int n, vector<int> &dp){
     return dp[n];
 }
 //T.C. = O(n)
-//S.C. = O(n) + O(n) = O(n);
+//S.C. = O(n) + O(n) => O(n)
 
 
 //This solution is using the Tabulation method 
@@ -50,6 +50,8 @@ int fib(int n){
     }
     return curr;
 }
+//T.C. = O(n)
+//S.C. = O(1)
 
 
 int main(){
