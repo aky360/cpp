@@ -37,6 +37,21 @@ void fibTabulation(int n){
 //T.C. = O(n)
 //S.C. = O(n)
 
+
+//This solution is using Space Optimization
+int fib(int n){
+    int p1=0, p2=1;
+    int curr;
+    
+    for(int i=2;i<=n;i++){
+        curr = p1 + p2;
+        p1 = p2;
+        p2 = curr;
+    }
+    return curr;
+}
+
+
 int main(){
     int n;
     cin>>n;
@@ -48,5 +63,6 @@ int main(){
         
     cout<<fibMemoization(n, dp)<<endl;
     fibTabulation(n);
+    cout<<fib(n)<<endl;
     return 0;
 }
