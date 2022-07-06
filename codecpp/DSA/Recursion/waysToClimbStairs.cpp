@@ -21,6 +21,7 @@ int countDistinctWayToClimbStair(long long nStairs){
 
 
 int main() {
-
+    long long stairs = 5;
+    cout<<countDistinctWayToClimbStair(stairs);
     return 0;
 }
