@@ -3,14 +3,30 @@
 #include <iostream>
 using namespace std;
 
-
+// A function that returns true only
+// if num contains one
+// digit
 int oneDigit(int num){
+  // Comparison operation is faster
+    // than division
+    // operation. So using following
+    // instead of "return num
+    // / 10 == 0;"
   return (num >= 0 && num < 10);
 }
 
-
+// A recursive function to find
+// out whether num is
+// palindrome or not. Initially, dupNum
+// contains address of
+// a copy of num.
 bool isPalUtil(int num, int* dupNum){
 
+  // Base case (needed for recursion
+    // termination): This
+    // statement mainly compares the
+    // first digit with the
+    // last digit
   if (oneDigit(num))
     return (num == (*dupNum) % 10);
 
@@ -54,6 +70,8 @@ bool isPalUtil(int num, int* dupNum){
 
 
 int isPal(int num){
+  // Check if num is negative,
+    // make it positive
   if (num < 0)
     num = -num;
 
