@@ -20,9 +20,9 @@ int minCostClimbingStairs(vector<int> &cost){
 
 int main() {
   
-    vector<int> vec = {10, 15, 20};
+    vector<int> cost = {10, 15, 20};
     
-    cout<<minCostClimbingStairs(vec)<<endl;
+    cout<<minCostClimbingStairs(cost)<<endl;
 
     return 0;
 }
