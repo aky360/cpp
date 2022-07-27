@@ -1,4 +1,5 @@
-/*You are given an array of ‘N’ distinct integers and an integer ‘X’ representing the target sum. 
+/*
+You are given an array of ‘N’ distinct integers and an integer ‘X’ representing the target sum. 
 You have to tell the minimum number of elements you have to take to reach the target sum ‘X’.
 */
 
@@ -21,6 +22,7 @@ int solve(vector<int> &num, int x){
     }
     return mini;
 }
+//Time Complexity is EXPONENTIAL.
 
 
 //using MEMOIZATION DP TECHNIQUE 
@@ -45,13 +47,37 @@ int solveMemoization(vector<int> &num, int x, vector<int> &dp){
     dp[x] = mini;
     return dp[x];
 }
+//T.C. = O(x*n)     x = amount, n = no. of coins.
+//S.C. = O(x)
+
+
+//using TABULATIOIN DP TECHNIQUE. 
+int solveTabulation(vector<int> &num, int x){
+    vector<int> dp(x+1, INT_MAX);
+    dp[0] = 0;
+    
+    for(int i=1;i<=x;i++){
+        //i am trying to solve for every amount figure from 1 to x;
+        for(int j=0;j<num.size();j++){
+            if(i-num[j] >=0 && dp[i-num[j]] != INT_MAX){
+                dp[i] = min(dp[i], 1+dp[i-num[j]]);
+            }
+        }
+    }
+    if(dp[x] == INT_MAX){
+        return -1;
+    }
+    return dp[x];
+}
+//T.C. = O(x*n)     x = amount, n = no. of coins.
+//S.C. = O(x)
 
 
 int minimumElements(vector<int> &num, int x){
     vector<int> dp(x+1, -1);
-    int ans  = solveMemoization(num, x, dp);
+    int ans  = solveMemoization(num, x, dp);   //for memoization function call
     
-    //int ans = solve(num, x);
+    //int ans = solve(num, x);                 //for recursive function call
     
     if(ans == INT_MAX){
         return -1;
@@ -60,6 +86,7 @@ int minimumElements(vector<int> &num, int x){
         return ans;
     }
     return ans;
+    //return solveTabulation(num, x);          //for tabulation function call
 }
 
 
