@@ -39,7 +39,7 @@ int solveMemoization(vector<int> &num, int x, vector<int> &dp){
     
     int mini = INT_MAX;
     for(int i=0;i<num.size();i++){
-        int ans = solve(num, x-num[i]);
+        int ans = solveMemoization(num, x-num[i], dp);
         if(ans != INT_MAX){
             mini = min(mini, 1+ans);
         }
