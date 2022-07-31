@@ -6,7 +6,9 @@ int solve(vector<int> &nums, int index){
     if(index>nums.size()){
         return 0;
     }
-    return max(solve(nums, index+2)+nums[index], solve(nums, index+1)+0);
+    int incl = solve(nums, index+2)+nums[index];
+    int excl = solve(nums, index+1)+0;
+    return max(incl, excl);
 }
 
 //this is solution of using memoization technique
@@ -21,7 +23,10 @@ int solveMem(vector<int> &nums, int index, vector<int> &dp){
         return dp[index];
     }
     
-    dp[index] = max(solveMem(nums, index-2, dp)+nums[index], solveMem(nums, index-1, dp)+0);
+    int incl = solveMem(nums, index-2, dp)+nums[index];
+    int excl = solveMem(nums, index-1, dp)+0;
+    
+    dp[index] = max(incl, excl);
     return dp[index];
 }
 
