@@ -40,6 +40,6 @@ int main() {
 // 1  11 4
 //          8
     // Function call
-    cout << "height " << sizeTree(root) << endl;
+    cout << "all nodes count is size =  " << sizeTree(root) << endl;
     return 0;
 }
