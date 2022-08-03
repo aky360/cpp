@@ -13,14 +13,14 @@ public:
     }
 };
 
-void inOrderRec(Node* root){
+void inOrder(Node* root){
     if(root == NULL){
         return ;
     }
     
-    inOrderRec(root->left);
+    inOrder(root->left);
     cout<<root->data<<" ";
-    inOrderRec(root->right);
+    inOrder(root->right);
 }
 
 
@@ -44,7 +44,7 @@ int main() {
 //      1  11 4
 //             \
 //              8
-    inOrderRec(root);
+    inOrder(root);
     cout<<endl;
     
     return 0;
