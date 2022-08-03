@@ -66,6 +66,16 @@ int main() {
     root->left->right->right = new Node(11);
     root->right->right = new Node(9);
     root->right->right->left = new Node(4);
+    root->right->right->left->right = new Node(8);
+//          2
+//        /  \
+//       7    5
+//        \    \
+//        6     9
+//       / \   /
+//      1  11 4
+//             \
+//              8
  
     // Function call
     cout << "Maximum element is " << findMax(root) << endl;
