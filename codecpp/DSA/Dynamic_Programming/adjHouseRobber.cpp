@@ -53,3 +53,42 @@ int main() {
 
     return 0;
 }
+
+
+
+/*
+class Solution {
+public:
+    
+    int solve(vector<int>& nums, int n, vector<int> &dp){
+        if(n == 1){
+            return nums[0];
+        }
+        if(n < 0){
+            return 0;
+        }
+        if(dp[n] != -1)
+            return dp[n];
+        dp[n] = solve(nums, n-1, dp)+nums[n];
+        return dp[n];
+    }
+    
+    int rob(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> first;
+        vector<int> second;
+        
+        for(int i=0;i<n;i++){
+            if(i != 0){
+                second.push_back(nums[i]);
+            }
+            if(i != n-1){
+                first.push_back(nums[i]);
+            }
+        }
+        vector<int> dp(n+1, -1);
+        int ans = max(solve(first, n, dp), solve(second, n, dp));
+        return ans;
+    }
+};
+*/
