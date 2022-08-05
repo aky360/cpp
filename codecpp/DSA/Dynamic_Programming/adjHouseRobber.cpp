@@ -92,3 +92,44 @@ public:
     }
 };
 */
+
+
+/*5_8_22
+
+class Solution {
+public:
+    
+    int solve(vector<int>& nums, int n){
+        if(n == 1){
+            return nums[0];
+        }
+        if(n<=0){
+            return 0;
+        }
+        int incl = solve(nums, n+1) + nums[n];
+        int excl = solve(nums, n+2) + 0;
+        
+        return max(incl, excl);
+    }
+    
+    int rob(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> dp(n+1, -1);
+        
+        vector<int> first, second;
+        
+        for(int i = 0; i<n; i++){
+            if(i != 0){
+                second.push_back(nums[i]);
+            }
+            if(i != n-1){
+                first.push_back(nums[i]);
+            }
+        }
+        
+        int ans = max(solve(first, n), solve(second, n));
+        return ans;
+    }
+};
+
+*/
