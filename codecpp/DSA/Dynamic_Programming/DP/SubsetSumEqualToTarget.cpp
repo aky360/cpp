@@ -8,7 +8,6 @@ If ‘ARR’ is {1,2,3,4} and ‘K’ = 4, then there exists 2 subsets with sum 
 are {1,3} and {4}. Hence, return true.
 */
 #include<bits/stdc++.h>
-
 using namespace std;
 /*
 In recursive we are starting from index n-1 to 0 that is top down appraoch .
@@ -22,20 +21,19 @@ int recursiveTarget(vector < int > & input, int n, int target) {
     }
     if (n == 0) {
         return input[n] == target ? 1 : 0;
-        // Agar array in ek hi element hai to oo simply target ke hi equal hi hona
-        chahiye otherwise
+        // Agar array in ek hi element hai to oo simply target ke hi equal hi hona chahiye otherwise
         return false
     }
     int taken = 0;
     int notaken = 0;
-    // for any particular , we have two option wether we take or not take the
-    element
+    // for any particular , we have two option wether we take or not take the element
     notaken = recursiveTarget(input, n - 1, target);
     if (input[n] <= target) {
         taken = recursiveTarget(input, n - 1, target - input[n]);
     }
     return taken || notaken;
 }
+
 int tabulationCheck(vector < int > & input, int target) {
     int n = input.size();
     vector < vector < int >> dp(n, vector < int > (target + 1, 0));
@@ -63,6 +61,7 @@ int tabulationCheck(vector < int > & input, int target) {
     }
     return dp[n - 1][target];
 }
+
 int main() {
     int n;
     cin >> n;
