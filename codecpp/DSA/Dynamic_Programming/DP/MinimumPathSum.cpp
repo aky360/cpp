@@ -8,11 +8,9 @@ Output: 7
 Explanation: Because the path 1 → 3 → 1 → 1 → 1 minimizes the sum.
 */
 #include <bits/stdc++.h>
-
 using namespace std;
-int recursiveMinimuCost(vector < vector < int >> & input, int n, int m, vector < vector < int >>
-    &
-    memo) {
+
+int recursiveMinimuCost(vector < vector < int >> & input, int n, int m, vector < vector < int >> &memo) {
     if (n == 0 and m == 0) {
         return input[n][m];
     }
@@ -27,6 +25,7 @@ int recursiveMinimuCost(vector < vector < int >> & input, int n, int m, vector <
     memo[n][m] = min(left, up) + input[n][m];
     return memo[n][m];
 }
+
 int dpMinimumCost(vector < vector < int >> & input) {
     int n = input.size();
     int m = input[0].size();
@@ -37,13 +36,13 @@ int dpMinimumCost(vector < vector < int >> & input) {
             if (i == 0 and j == 0) {
                 dp[i][j] = input[i][j];
             } else {
-                dp[i][j] = min((i - 1 >= 0 ? dp[i - 1][j] : 1e9), (j - 1 >= 0 ? dp[i]
-                    [j - 1] : 1e9)) + input[i][j];
+                dp[i][j] = min((i - 1 >= 0 ? dp[i - 1][j] : 1e9), (j - 1 >= 0 ? dp[i][j - 1] : 1e9)) + input[i][j];
             }
         }
     }
     return dp[n - 1][m - 1];
 }
+
 int main() {
     int n, m;
     cin >> n >> m;
@@ -57,6 +56,7 @@ int main() {
     cout << recursiveMinimuCost(input, n - 1, m - 1, memo) << endl;
     cout << dpMinimumCost(input) << endl;
 }
+
 /*
 In recursive + memoization
 time complexity: O(mn)
