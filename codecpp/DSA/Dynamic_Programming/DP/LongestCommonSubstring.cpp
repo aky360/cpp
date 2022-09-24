@@ -7,15 +7,14 @@ Explanation:
 The longest common substring is “Geeks” and is of length 5.
 */
 #include <bits/stdc++.h>
-
 using namespace std;
-int recursiveSubstring(string input1, string input2, int n, int m,
-    vector < vector < int >> & dp, int count) {
+
+int recursiveSubstring(string input1, string input2, int n, int m, vector < vector < int >> & dp, int count) {
     if (n < 0 || m < 0) {
         return count;
     }
     if (dp[n][m] != -1) {
-        // return dp[n][m];
+        return dp[n][m];
     }
     int temp = 0;
     if (input1[n] == input2[m]) {
@@ -24,6 +23,7 @@ int recursiveSubstring(string input1, string input2, int n, int m,
     temp = max(temp, max(recursiveSubstring(input1, input2, n - 1, m, dp, 0), recursiveSubstring(input1, input2, n, m - 1, dp, 0)));
     return dp[n][m] = temp;
 }
+
 int tabulationSubstring(string input1, string input2) {
     int n = input1.length();
     int m = input2.length();
@@ -47,6 +47,7 @@ int tabulationSubstring(string input1, string input2) {
     }
     return ans;
 }
+
 int main() {
     string input1, input2;
     cin >> input1 >> input2;
