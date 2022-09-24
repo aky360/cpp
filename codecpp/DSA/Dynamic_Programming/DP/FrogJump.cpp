@@ -20,7 +20,7 @@ int recursiveJump(vector < int > & input, vector < int > & memo, int n) {
         return memo[n];
     }
     int oneStep = recursiveJump(input, memo, n - 1) + abs(input[n] - input[n - 1]);
-    int twoStep = n - 2 >= 0 ? recursiveJump(input, memo, n - 2) + abs(input[n] - input[n 2]) : INT_MAX;
+    int twoStep = n - 2 >= 0 ? recursiveJump(input, memo, n - 2) + abs(input[n] - input[n-2]) : INT_MAX;
     return min(oneStep, twoStep);
 }
 
