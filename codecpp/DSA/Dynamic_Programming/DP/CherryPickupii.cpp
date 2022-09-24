@@ -40,11 +40,9 @@ int recursiveCherryPickup(vector < vector < int >> & input, int i1, int j1, int 
             int newj2 = j2 + jj2;
             int temp = 0;
             if (j1 == j2) {
-                temp = recursiveCherryPickup(input, i1 + 1, newj1, newj2, memo) +
-                    input[i1][j1];
+                temp = recursiveCherryPickup(input, i1 + 1, newj1, newj2, memo) + input[i1][j1];
             } else {
-                temp = recursiveCherryPickup(input, i1 + 1, newj1, newj2, memo) +
-                    input[i1][j1] + input[i1][j2];
+                temp = recursiveCherryPickup(input, i1 + 1, newj1, newj2, memo) + input[i1][j1] + input[i1][j2];
             }
             ans = max(ans, temp);
         }
@@ -52,6 +50,7 @@ int recursiveCherryPickup(vector < vector < int >> & input, int i1, int j1, int 
     memo[i1][j1][j2] = ans;
     return ans;
 }
+
 bool isvalid(int j1, int j2, int n, int m) {
     if (j1 < 0 or j1 >= m or j2 < 0 or j2 >= m) {
         return false;
