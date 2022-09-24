@@ -18,9 +18,7 @@ Hence the answer for the above test case is 2.
 using namespace std;
 
 // top down approach
-int recursiveCount(int m, int n, vector < vector < int >> & input, vector < vector < int >>
-    &
-    memo) {
+int recursiveCount(int m, int n, vector < vector < int >> & input, vector < vector < int >> &memo) {
     if (n >= 0 and m >= 0 and input[n][m] == -1) {
         return 0;
     }
@@ -37,6 +35,7 @@ int recursiveCount(int m, int n, vector < vector < int >> & input, vector < vect
     int leftSideCall = recursiveCount(m - 1, n, input, memo);
     memo[n][m] = upSideCall + leftSideCall;
 }
+
 /*
 for bottom up approach
 1. Declare the base case
@@ -60,6 +59,7 @@ int dpCount(int m, int n, vector < vector < int >> & input) {
     }
     return dp[n][m];
 }
+
 int main() {
     int m, n;
     cin >> m >> n;
@@ -75,6 +75,7 @@ int main() {
     cout << ans1 << " " << ans2 << endl;
     // cout<<ans1<<endl;
 }
+
 /*
 In recusive + memoization
 time complexity: O(mn)
