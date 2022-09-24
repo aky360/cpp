@@ -11,8 +11,7 @@ Input: s = "aa", p = "a"
 Output: false
 Explanation: "a" does not match the entire string "aa".
 */
-int recursiveWildCard(string input, string required, int n, int m,
-    vector < vector < int >> & dp) {
+int recursiveWildCard(string input, string required, int n, int m, vector < vector < int >> & dp) {
     if (n < 0 and m < 0)
         return 1;
     if (m >= 0 and n < 0) {
@@ -42,6 +41,7 @@ int recursiveWildCard(string input, string required, int n, int m,
     }
     return dp[n][m];
 }
+
 int tabulationWildCard(string input, string required) {
     int n = input.length();
     int m = required.length();
