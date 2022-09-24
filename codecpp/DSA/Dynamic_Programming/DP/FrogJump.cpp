@@ -28,8 +28,7 @@ int dpJump(vector < int > & input) {
     int dp[input.size()];
     dp[0] = 0;
     for (int i = 1; i < input.size(); i++) {
-        dp[i] = min(dp[i - 1] + abs(input[i] - input[i - 1]), i - 2 >= 0 ? dp[i - 2] + abs(input[i] -
-            input[i - 2]) : INT_MAX);
+        dp[i] = min(dp[i - 1] + abs(input[i] - input[i - 1]), i - 2 >= 0 ? dp[i - 2] + abs(input[i] - input[i - 2]) : INT_MAX);
     }
     return dp[input.size() - 1];
 }
