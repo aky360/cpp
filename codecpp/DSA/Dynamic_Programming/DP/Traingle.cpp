@@ -23,8 +23,7 @@ using namespace std;
 /*
 In this question , in recursive we will start from top to bottom
 */
-int recursiveTraingle(vector < vector < int >> & input, int row, int col,
-    vector < vector < int >> & memo) {
+int recursiveTraingle(vector < vector < int >> & input, int row, int col, vector < vector < int >> & memo) {
     if (col > row) {
         return 1e9;
     }
@@ -39,6 +38,7 @@ int recursiveTraingle(vector < vector < int >> & input, int row, int col,
     memo[row][col] = min(down, diag) + input[row][col];
     return memo[row][col];
 }
+
 int dpTraingle(vector < vector < int >> & input) {
     int n = input.size();
     /*
@@ -64,6 +64,7 @@ int dpTraingle(vector < vector < int >> & input) {
     }
     return dp[0][0];
 }
+
 int main() {
     int n;
     cin >> n;
