@@ -21,11 +21,9 @@ int recursiveTarget(vector < int > & input, int n, vector < vector < int >> & me
     }
     int nottaken = 0;
     int taken = 0;
-    nottaken = recursiveTarget(input, n - 1, memo, target); // that means 0 to n-1th
-    index tak kitna subset hai
+    nottaken = recursiveTarget(input, n - 1, memo, target); // that means 0 to n-1th index tak kitna subset hai
     if (input[n] <= target) {
-        taken = recursiveTarget(input, n - 1, memo, target - input[n]); // that means
-        nth index kitna subset hai
+        taken = recursiveTarget(input, n - 1, memo, target - input[n]); // that means nth index kitna subset hai
     }
     memo[n][target] = taken + nottaken;
     return memo[n][target];
