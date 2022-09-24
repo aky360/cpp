@@ -7,11 +7,9 @@ diagonally below left or right. So from a particular cell (row, col), we can mov
 three directions i.e.
 */
 #include <bits/stdc++.h>
-
 using namespace std;
-int recursiveFallsumUTIL(vector < vector < int >> & mat, int n, int m, vector < vector < int >>
-    &
-    memo) {
+
+int recursiveFallsumUTIL(vector < vector < int >> & mat, int n, int m, vector < vector < int >> &memo) {
     if (m < 0 or m >= mat[0].size()) {
         return -1e8;
     }
@@ -30,6 +28,7 @@ int recursiveFallsumUTIL(vector < vector < int >> & mat, int n, int m, vector < 
     memo[n][m] = max(max(up, up_right), up_left);
     return memo[n][m];
 }
+
 /*
 In this recursive approach i need to traverse every col in last row for getting
 answer.
@@ -43,6 +42,7 @@ int recursiveFallingSum(vector < vector < int >> & input, int n, int m,
     }
     return ans;
 }
+
 int dpFallingSum(vector < vector < int >> & input) {
     int n = input.size();
     int m = input[0].size();
@@ -79,6 +79,7 @@ int dpFallingSum(vector < vector < int >> & input) {
     }
     return ans;
 }
+
 int main() {
     int n, m;
     cin >> n >> m;
@@ -94,6 +95,7 @@ int main() {
     cout << ans1 << " " << ans2 << endl;
     // cout << ans1 << endl;
 }
+
 /*
 In recursive + memoization
 time complexity = O(n*m)
