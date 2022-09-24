@@ -12,7 +12,7 @@ void functin(){
             cout<<"j "<<j<<endl;
             j++;
             cout<<"j "<<j<<endl;
-            if(j>i){
+            if(i>j){
                 break;
             }
             break;
