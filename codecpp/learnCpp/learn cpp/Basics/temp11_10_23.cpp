@@ -4,9 +4,10 @@ using namespace std;
 
 int main() {
     string str="0101";
-    char a = 'b';
-    int y;
-    cout<<int(98+'z')<<"this this"<<endl;
+    char a = 'd';
+    int y=int(26-('z'-a));
+    //cout<<char('z'-a)<<endl;
+    cout<<char(64+int(26-('z'-a)))<<"this this"<<endl;
     cout<<int(a)<<endl;
     cout<<char(98)<<endl;
     str[0]='1';
